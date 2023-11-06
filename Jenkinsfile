@@ -1,14 +1,11 @@
 pipeline {
-    agent any
+    agent any 
+      tools 
+        {
+          maven "Apache Maven 3.8.6"
+        }
 
-    stages {
-        stage ('Compile Stage') {
-
-            steps {
-                tools maven "Apache Maven 3.8.6"
-                }
-            }
-
+    stages{
         stage ('Building Stage') {
 
             steps {
