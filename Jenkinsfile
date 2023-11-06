@@ -8,7 +8,6 @@ pipeline {
                 tools maven "Apache Maven 3.8.6"
                 }
             }
-        }
 
         stage ('Building Stage') {
 
@@ -16,8 +15,6 @@ pipeline {
                  sh 'mvn clean package'
                 }
             }
-        }
-
 
         stage ('Deployment Stage') {
             steps {
@@ -33,4 +30,5 @@ pipeline {
             -J-Dazure.keyvault.client-secret=${GDS8Q~X5.WjXNp0f1Y.-5SuROlhX5KGHSncXcdiK}'        
             }
         }
+     }
 }
