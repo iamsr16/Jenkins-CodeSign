@@ -15,8 +15,7 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-             sh  
-            'jarsigner   -keystore NONE -storetype AzureKeyVault \
+            sh 'jarsigner  -keystore NONE -storetype AzureKeyVault \
             -signedjar signerjar.jar ${jenkins-example-1.0-SNAPSHOT.jar} ${TestSSC} \
             -verbose  -storepass "" \
             -providerName AzureKeyVault \
