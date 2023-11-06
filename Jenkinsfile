@@ -33,5 +33,4 @@ pipeline {
             -J-Dazure.keyvault.client-secret=${GDS8Q~X5.WjXNp0f1Y.-5SuROlhX5KGHSncXcdiK}'        
             }
         }
-    }
 }
