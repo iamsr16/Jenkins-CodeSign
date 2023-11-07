@@ -52,6 +52,22 @@
             <artifactId>junit-platform-runner</artifactId>
             <version>${junit.platform.version}</version>
         </dependency>
+		<!-- https://mvnrepository.com/artifact/com.azure/azure-security-keyvault-jca -->
+       <dependency>
+           <groupId>com.azure</groupId>
+           <artifactId>azure-security-keyvault-jca</artifactId>
+           <version>2.8.0</version>
+       </dependency>
+	   <dependency>
+          <groupId>com.azure</groupId>
+          <artifactId>azure-security-keyvault-secrets</artifactId>
+          <version>4.2.3</version>
+        </dependency>
+		<dependency>
+		  <groupId>com.azure</groupId>
+		  <artifactId>azure-identity</artifactId>
+		  <version>1.2.0</version>
+		</dependency>
 
     </dependencies>
 
@@ -68,5 +84,7 @@
             <url>https://mymavenrepo.com/repo/9Q8JoRpymi4UGK8HzbVq/</url>
         </repository>
     </distributionManagement>
+	
+	
 
 </project>
