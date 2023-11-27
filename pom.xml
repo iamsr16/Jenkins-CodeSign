@@ -37,7 +37,6 @@
                 </dependencies>
             </plugin>
         
-            <dependencies>   
                <dependency>
                  <groupId>com.azure</groupId>
                  <artifactId>azure-security-keyvault-jca</artifactId>
@@ -52,9 +51,7 @@
 		  <groupId>com.azure</groupId>
 		  <artifactId>azure-identity</artifactId>
 		  <version>1.2.0</version>
-		</dependency>
-	    </dependencies>
-	 		   
+		</dependency>		   
         </plugins>
     </build>
     <dependencies>
