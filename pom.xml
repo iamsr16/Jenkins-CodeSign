@@ -37,6 +37,25 @@
                     </dependency>
                 </dependencies>
             </plugin>
+             <plugin>
+              <groupId>com.microsoft.azure.keyvault</groupId>
+              <artifactId>azure-keyvault-maven-plugin</artifactId>
+              <version>2.0.2</version>
+              <executions>
+                  <execution>
+                   <id>sign</id>
+                   <phase>package</phase>
+                   <goals>
+                      <goal>sign</goal>
+                   </goals>
+                  <configuration>
+                    <keyVaultUrl>https://poc-data-key-vault.vault.azure.net/</keyVaultUrl>
+                    <certificateName>TestSSC</certificateName>
+                    <jarPath>jenkins-example-1.0-SNAPSHOT.jar</jarPath>
+                  </configuration>
+               </execution>
+             </executions>
+         </plugin>		
         </plugins>
     </build>
     <dependencies>
