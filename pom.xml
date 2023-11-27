@@ -36,7 +36,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
-               
+ <dependencies>   
         <dependency>
            <groupId>com.azure</groupId>
            <artifactId>azure-security-keyvault-jca</artifactId>
@@ -69,7 +69,6 @@
         </dependency>
          <!-- https://mvnrepository.com/artifact/com.azure/azure-security-keyvault-jca -->
   </dependencies>
-	  
 
     <repositories>
         <repository>
