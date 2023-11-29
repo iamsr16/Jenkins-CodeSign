@@ -7,10 +7,7 @@ pipeline {
 
     stages{
 
-               env {
-                    KEYVAULT_NAME = 'poc-data-key-vault'
-                    KEYVAULT_URL = "https://poc-data-key-vault.vault.azure.net/"
-                 }
+      
 
         stage (' Setup') {
             steps {
@@ -19,7 +16,10 @@ pipeline {
                 sh 'mv azure-security-keyvault-jca-2.7.1 $JAVA_HOME/jdk-11.0.16.1/lib'
  
                 // Set environment variables for Key Vault access
-                
+                         env {
+                    KEYVAULT_NAME = 'poc-data-key-vault'
+                    KEYVAULT_URL = "https://poc-data-key-vault.vault.azure.net/"
+                 }
             }
         }
  
