@@ -7,18 +7,19 @@ pipeline {
 
     stages{
 
+               env {
+                    KEYVAULT_NAME = 'poc-data-key-vault'
+                    KEYVAULT_URL = "https://poc-data-key-vault.vault.azure.net/"
+                 }
 
         stage (' Setup') {
             steps {
-                      // Download and install the Key Vault JCA provider
+                // Download and install the Key Vault JCA provider
                 sh 'wget https://mvnrepository.com/artifact/com.azure/azure-security-keyvault-jca/2.7.1/azure-security-keyvault-jca-2.7.1'
                 sh 'mv azure-security-keyvault-jca-2.7.1 $JAVA_HOME/jdk-11.0.16.1/lib'
  
                 // Set environment variables for Key Vault access
-                env {
-                    KEYVAULT_NAME = 'poc-data-key-vault'
-                    KEYVAULT_URL = "https://poc-data-key-vault.vault.azure.net/"
-                }
+                
             }
         }
  
@@ -31,7 +32,6 @@ pipeline {
         stage('Sign') {
             steps { 
               
-
                 // Sign JAR file using retrieved certificate and alias
                     sh 'jarsigner -verbose -keystore $JAVA_HOME/jdk-11.0.16.1/lib/azure-security-keyvault-jca-2.7.1  D:/New_CodeSign/jarsigner/jenkins-example-1.0-SNAPSHOT.jar TestSSC'
 
