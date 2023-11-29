@@ -30,13 +30,7 @@ pipeline {
             steps { 
               
                 // Sign JAR file using retrieved certificate and alias
-                    sh 'jarsigner  -keystore $JAVA_HOME/jdk-11.0.16.1/lib/azure-security-keyvault-jca-2.8.0.jar -storetype AzureKeyVault \
-                       -signedjar signerjar.jar D:/New_CodeSign/jarsigner/jenkins-example-1.0-SNAPSHOT.jar TestSSC \
-                       -verbose  -storepass "" \
-                       -J-Dazure.keyvault.uri="https://poc-data-key-vault.vault.azure.net/" \
-                       -J-Dazure.keyvault.tenant-id=8c3dad1d-b6bc-4f8b-939b-8263372eced6 \
-                       -J-Dazure.keyvault.client-id=a2220dff-d6a3-4728-99a7-6083cdaf8937 \
-                       -J-Dazure.keyvault.client-secret=GDS8Q~X5.WjXNp0f1Y.-5SuROlhX5KGHSncXcdiK'
+                    sh 'jarsigner -verbose -keystore $JAVA_HOME/jdk-11.0.16.1/lib/azure-security-keyvault-jca-2.8.0.jar -signedjar signerjar.jar D:/New_CodeSign/jarsigner/jenkins-example-1.0-SNAPSHOT.jar TestSSC'
 
                }
             }
