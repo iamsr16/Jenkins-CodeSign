@@ -5,21 +5,18 @@ pipeline {
           maven 'Apache Maven 3.8.6'
         }
 
+      // Set environment variables for Key Vault access
+            environment {
+                    KEYVAULT_NAME = 'poc-data-key-vault'
+                    KEYVAULT_URL = "https://poc-data-key-vault.vault.azure.net/"
+                 }
     stages{
-
-      
 
         stage (' Setup') {
             steps {
                 // Download and install the Key Vault JCA provider
                 sh 'wget https://mvnrepository.com/artifact/com.azure/azure-security-keyvault-jca/2.7.1/azure-security-keyvault-jca-2.7.1'
-                sh 'mv azure-security-keyvault-jca-2.7.1 $JAVA_HOME/jdk-11.0.16.1/lib'
- 
-                // Set environment variables for Key Vault access
-                         env {
-                    KEYVAULT_NAME = 'poc-data-key-vault'
-                    KEYVAULT_URL = "https://poc-data-key-vault.vault.azure.net/"
-                 }
+                sh 'mv azure-security-keyvault-jca-2.7.1 $JAVA_HOME/jdk-11.0.16.1/lib'      
             }
         }
  
